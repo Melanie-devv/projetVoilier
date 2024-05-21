@@ -9,3 +9,4 @@ C:\Users\Windows\StudioProjects\C#\ProjetVoilier\ClassLibrary1\obj\Debug\net8.0\
 C:\Users\Windows\StudioProjects\C#\ProjetVoilier\ClassLibrary1\obj\Debug\net8.0\refint\ClassLibrary1.dll
 C:\Users\Windows\StudioProjects\C#\ProjetVoilier\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.pdb
 C:\Users\Windows\StudioProjects\C#\ProjetVoilier\ClassLibrary1\obj\Debug\net8.0\ref\ClassLibrary1.dll
+C:\Users\Windows\StudioProjects\C#\ProjetVoilier\ClassLibrary1\obj\Debug\net8.0\ClassLibrary1.sourcelink.json

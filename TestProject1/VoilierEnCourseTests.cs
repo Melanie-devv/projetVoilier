@@ -37,5 +37,52 @@ namespace TestProject1
             Assert.Throws<ArgumentException>(() => new VoilierEnCourse(1, "Test Voilier", 10, 3, 2000, DateTime.Now, "test.jpg", 1, 91, 2.3522));
             Assert.Throws<ArgumentException>(() => new VoilierEnCourse(1, "Test Voilier", 10, 3, 2000, DateTime.Now, "test.jpg", 1, 48.8566, 181));
         }
+        
+        [Fact]
+        public void TestTempsBrut()
+        {
+            var voilierEnCourse = new VoilierEnCourse(1, "Super Voilier", 10, 3, 1000, new DateTime(2020, 1, 1), "photo.jpg", 123, 48.8566, 2.3514);
+
+            voilierEnCourse.TempsBrut = 120;
+            var tempsBrut = voilierEnCourse.TempsBrut;
+
+            Assert.Equal(120, tempsBrut);
+        }
+
+        [Fact]
+        public void TestTempsReel()
+        {
+            var voilierEnCourse = new VoilierEnCourse(1, "Super Voilier", 10, 3, 1000, new DateTime(2020, 1, 1), "photo.jpg", 123, 48.8566, 2.3514);
+            voilierEnCourse.TempsBrut = 120;
+            voilierEnCourse.AjouterPenalite(new Penalite(1, 10, "Départ anticipé", 0, 0));
+
+            var tempsReel = voilierEnCourse.TempsReel();
+
+            Assert.Equal(130, tempsReel);
+        }
+
+        [Fact]
+        public void TestAjouterPenalite()
+        {
+            var voilierEnCourse = new VoilierEnCourse(1, "Super Voilier", 10, 3, 1000, new DateTime(2020, 1, 1), "photo.jpg", 123, 48.8566, 2.3514);
+            var penalite = new Penalite(1, 10, "Départ anticipé", 0, 0);
+
+            voilierEnCourse.AjouterPenalite(penalite);
+
+            Assert.Single(voilierEnCourse.ListePenalites);
+            Assert.Equal(penalite, voilierEnCourse.ListePenalites[0]);
+        }
+
+        [Fact]
+        public void TestSupprimerPenalite()
+        {
+            var voilierEnCourse = new VoilierEnCourse(1, "Super Voilier", 10, 3, 1000, new DateTime(2020, 1, 1), "photo.jpg", 123, 48.8566, 2.3514);
+            var penalite = new Penalite(1, 10, "Départ anticipé", 0, 0);
+            voilierEnCourse.AjouterPenalite(penalite);
+
+            voilierEnCourse.SupprimerPenalite(penalite);
+
+            Assert.Empty(voilierEnCourse.ListePenalites);
+        }
     }
 }

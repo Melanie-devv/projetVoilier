@@ -9,6 +9,21 @@ namespace ClassLibrary1.Models
         private double _latitude;
         private double _longitude;
         private List<Penalite> _listePenalites;
+        private int _tempsBrut;
+
+        public int TempsBrut
+        {
+            get => _tempsBrut;
+            set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Le temps brut ne peut pas être négatif.");
+                }
+                _tempsBrut = value;
+            }
+        }
+
 
         public int NumInscription
         {
@@ -72,7 +87,7 @@ namespace ClassLibrary1.Models
 
         public int TempsReel()
         {
-            int tempsTotal = 0;
+            int tempsTotal = _tempsBrut;
             foreach (var penalite in _listePenalites)
             {
                 tempsTotal += penalite.Duree;
@@ -99,6 +114,14 @@ namespace ClassLibrary1.Models
                 tempsTotal += penalite.Duree;
             }
             return tempsTotal;
+        }
+        
+        public void AfficherDetails()
+        {
+            Console.WriteLine($"Voilier en course : {Description()}");
+            Console.WriteLine($"Temps brut : {TempsBrut}");
+            Console.WriteLine($"Temps réel : {TempsReel}");
+            Console.WriteLine($"Pénalités : {string.Join(", ", ListePenalites.Select(p => p.Description()))}");
         }
     }
 }

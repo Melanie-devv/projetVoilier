@@ -105,3 +105,4 @@ C:\Users\Windows\StudioProjects\C#\ProjetVoilier\TestProject1\obj\Debug\net8.0\r
 C:\Users\Windows\StudioProjects\C#\ProjetVoilier\TestProject1\obj\Debug\net8.0\TestProject1.pdb
 C:\Users\Windows\StudioProjects\C#\ProjetVoilier\TestProject1\obj\Debug\net8.0\TestProject1.genruntimeconfig.cache
 C:\Users\Windows\StudioProjects\C#\ProjetVoilier\TestProject1\obj\Debug\net8.0\ref\TestProject1.dll
+C:\Users\Windows\StudioProjects\C#\ProjetVoilier\TestProject1\obj\Debug\net8.0\TestProject1.sourcelink.json
