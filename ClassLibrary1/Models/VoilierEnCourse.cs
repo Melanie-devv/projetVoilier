@@ -95,12 +95,6 @@ namespace ClassLibrary1.Models
             return tempsTotal;
         }
 
-        public int Classement()
-        {
-            // À implémenter en fonction des règles de la course
-            throw new NotImplementedException();
-        }
-
         public string Description()
         {
             return $"{base.Description()} (numéro d'inscription : {NumInscription}, latitude : {Latitude}, longitude : {Longitude})";
